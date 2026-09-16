@@ -41,8 +41,7 @@ Sistema embebido que obtiene datos de calidad del aire de múltiples fuentes (GV
 ## Modelo de IA
 
 - Regresión polinómica de grado 2
-- Dataset: 90.528 registros (2016-2026)
-- R²: 0.72
+- R²: 0.933
 - Tamaño: 3 KB
 
 ## Uso
