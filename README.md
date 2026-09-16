@@ -1,5 +1,15 @@
 # Prediccion_AQI_Valencia
-DISPOSITIVO PREDICCIÓN AQI EN PICO W
+
+Dispositivo de predicción de calidad del aire basado en Raspberry Pi Pico WH.
+
+## Descripción
+
+Sistema embebido que obtiene datos de calidad del aire de múltiples fuentes (GVA, WAQI, Open-Meteo), los procesa con un modelo de IA y los envía a un servidor Flask para su visualización.
+
+## Archivos
+
+- `main.py` - Programa principal de la Pico W
+- `servidor_pico.py` - Servidor Flask + panel web
 
 ## Hardware
 
@@ -11,7 +21,7 @@ DISPOSITIVO PREDICCIÓN AQI EN PICO W
 | GPS | LC79D (UART) |
 | Alimentación | Batería solar 10.000 mAh |
 
-### Conexiones
+## Conexiones
 
 | Componente | Pin Pico W |
 |------------|------------|
@@ -24,26 +34,24 @@ DISPOSITIVO PREDICCIÓN AQI EN PICO W
 
 ## Fuentes de datos
 
-- **GVA**: 40 estaciones oficiales de la Generalitat Valenciana
-- **WAQI**: 35 estaciones globales (incluye sensor.community)
+- **GVA**: estaciones oficiales de la Generalitat Valenciana
+- **WAQI**: estaciones globales (incluye sensor.community)
 - **Open-Meteo**: modelo CAMS europeo para forecast y respaldo
 
 ## Modelo de IA
 
-- **Tipo**: Regresión polinómica de grado 2
-- **Dataset**: 90.528 registros históricos (2016-2026)
-- **Variables**: PM2.5, PM10, O3, NO2, temperatura, humedad, viento
-- **R²**: 0.72
-- **Tamaño**: 3 KB (ejecutable en microcontrolador)
+- Regresión polinómica de grado 2
+- Dataset: 90.528 registros (2016-2026)
+- R²: 0.72
+- Tamaño: 3 KB
 
-## Instalación y uso
+## Uso
 
 ### Pico W
 
-1. Instalar MicroPython 1.28.0 en la Pico W
-2. Cargar los archivos de la carpeta `pico/` en la Pico
+1. Instalar MicroPython 1.28.0
+2. Cargar `main.py` en la Pico
 3. Configurar SSID y password del WiFi en `main.py`
-4. Ejecutar como `main.py` para arranque automático
 
 ### Servidor Flask
 
